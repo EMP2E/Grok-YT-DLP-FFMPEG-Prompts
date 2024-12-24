@@ -1,0 +1,41 @@
+Goal: Download a single Youtube video in the highest availible video+audio quality.
+
+Working within Windows Powershell - Windows 11
+
+Download YT-DLP, and ffmpeg (ensuring the ffmpeg and ffprobe executables are present)
+Create new file in Downloads folder, name it "YT-DLP"
+add yt-dlp.exe into YT-DLP folder
+Use 7-Zip to extract the ffmpeg files, I've had problems using the basic windows archiver.
+Copy and Paste only the ffmpeg.exe and ffprobe.exe into the YT-DLP folder. They will be found in the downloaded ffmpeg folder after extracting.
+
+Open the Command Prompt, then promptly close it.
+  Then go to the YT-DLP folder within the Downloads folder
+Right click the yt-dlp.exe, then select "Open in Terminal"
+
+ ***This method should pre-fill the pathing for downloaded videos.***
+  Pathing should look similar to this:
+  PS C:\Users\(user profile name)\Downloads\YT-DLP> 
+(user profile name) will be your windows username that appears in the upper pathing names, no parentheses.
+
+Powershell will pre-fill the pathing saving you time. Remember to open the terminal by right clicking yt-dlp.exe in the YT-DLP folder and select "Open in Terminal",
+If the option it's giving you is "Open in Notepad" or something similar, go to the windows search bar, type "Command Prompt", open it, then close it, and try right clicking the yt-dlp.exe again, it should say "open in terminal" now.
+
+
+  
+
+You can then copy/paste the following prompts, only changing the "video url" with the desired youtube video url:
+
+
+.\yt-dlp.exe -f bestvideo+bestaudio/b "video url"
+
+or
+
+.\yt-dlp.exe <video_url>
+
+
+
+
+
+It's important to update yt-dlp before each use, as it updates weekly. Paste the following prompt to automatically download the newest update.
+
+.\yt-dlp.exe --update
